@@ -16,6 +16,8 @@
 ## Discord Support:
 <a href="https://discord.gg/8heARRB"><img src="https://discordapp.com/api/guilds/624635034225213440/widget.png?style=banner2"></a>
 
+<img src="https://i.imgur.com/weIdKDD.gif" />
+
 ## Usage:
 DeviceAuthGenerator is pretty simple to use. You can either use run the Python script directly or use the pre-compiled
 executable in the <a href="#">releases</a>.
