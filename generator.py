@@ -103,7 +103,7 @@ class EpicGenerator:
             print('Opening device code link in a new tab.')
 
             device_code = await self.create_device_code()
-            webbrowser.open(f"https://www.epicgames.com/activate?userCode={device_code[0]}")
+            webbrowser.open(f"https://www.epicgames.com/activate?userCode={device_code[0]}", new=1)
 
             user = await self.wait_for_device_code_completion(code=device_code[1])
             device_auths = await self.create_device_auths(user)
