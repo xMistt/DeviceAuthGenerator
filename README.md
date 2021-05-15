@@ -35,7 +35,6 @@ clipboard & saved in `device_auths.json` which is compatible out of the box with
    
 ## Example response:
 ### Console
-___
 ```json
 Generated device auths for: xMistt.
 {
@@ -51,6 +50,7 @@ Generated device auths for: xMistt.
 }
 
 ```
+___
 ### File
 ```json
 {
