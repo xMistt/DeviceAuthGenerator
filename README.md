@@ -33,7 +33,7 @@ executable in the <a href="#">releases</a>.
 clipboard & saved in `device_auths.json` which is compatible out of the box with
    <a href="https://github.com/Terbau/fortnitepy">fortnitepy</a>.
    
-## Example response:
+## Example responses:
 ### Console
 ```json
 Generated device auths for: xMistt.
