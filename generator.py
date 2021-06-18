@@ -37,7 +37,7 @@ import aiohttp
 import pyperclip
 
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 # "Constants" ? I don't know.
 DAUNTLESS_TOKEN = "YjA3MGYyMDcyOWY4NDY5M2I1ZDYyMWM5MDRmYzViYzI6SEdAWEUmVEdDeEVKc2dUIyZfcDJdPWFSbyN+Pj0+K2M2UGhSKXpYUA=="
