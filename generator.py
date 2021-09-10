@@ -97,7 +97,7 @@ class EpicGenerator:
 
         print(f'DeviceAuthGenerator v{__version__} made by xMistt // Oli. Ask for help in PartyBot.')
         await asyncio.sleep(3)
-        os.system('cls' if 'win' in sys.platform else 'clear')
+        os.system('cls' if sys.platform.startswith('win') else 'clear')
 
         while True:
             print('Opening device code link in a new tab.')
@@ -108,7 +108,7 @@ class EpicGenerator:
             user = await self.wait_for_device_code_completion(code=device_code[1])
             device_auths = await self.create_device_auths(user)
 
-            os.system('cls' if 'win' in sys.platform else 'clear')
+            os.system('cls' if sys.platform.startswith('win') else 'clear')
             pretty_device_auths = json.dumps(device_auths, sort_keys=False, indent=4)
             print(f'Generated device auths for: {user.display_name}.')
             print(pretty_device_auths)
@@ -126,7 +126,7 @@ class EpicGenerator:
             if choice.lower().strip() != 'y':
                 break
             else:
-                os.system('cls' if 'win' in sys.platform else 'clear')
+                os.system('cls' if sys.platform.startswith('win') else 'clear')
                 print('Closing DeviceAuthGenerator...')
                 await asyncio.sleep(1)
 
@@ -163,7 +163,7 @@ class EpicGenerator:
         return data['user_code'], data['device_code']
 
     async def wait_for_device_code_completion(self, code: str) -> EpicUser:
-        os.system('cls' if 'win' in sys.platform else 'clear')
+        os.system('cls' if sys.platform.startswith('win') else 'clear')
         print('Waiting for completion.')
 
         while True:
