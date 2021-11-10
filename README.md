@@ -23,12 +23,15 @@
 ## Usage:
 DeviceAuthGenerator is pretty simple to use. You can either use run the Python script directly or use the pre-compiled
 executable in the <a href="#">releases</a>.
-1. Install the requirements _(only applies to the Python script, you don't need to install requirements for the executable)_.
+1. Either install the requirements _(only applies to the Python script, you don't need to install requirements for the executable)_:
 
     ```
     pip install -U -r requirements.txt
     ```
-    Note: If [nix](https://nixos.org/) is installed with flake support, you can simply run `nix develop` to drop into a development shell with python and the related libraries installed.
+    OR if [nix](https://nixos.org/) is installed with flake support, you can simply run drop into development shell:
+    ```
+    nix develop
+    ```
 
 2. Run DeviceAuthGenerator, either being `generator.py` or `DeviceAuthGenerator.exe`.
 
