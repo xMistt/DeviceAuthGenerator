@@ -28,6 +28,7 @@ executable in the <a href="#">releases</a>.
     ```
     pip install -U -r requirements.txt
     ```
+    Note: If [nix](https://nixos.org/) is installed with flake support, you can simply run `nix develop` to drop into a development shell with python and the related libraries installed.
 
 2. Run DeviceAuthGenerator, either being `generator.py` or `DeviceAuthGenerator.exe`.
 
@@ -36,7 +37,7 @@ executable in the <a href="#">releases</a>.
 3. Wait 5 or less seconds for device auths to be generated. They will then be pasted into the console, copied to
 clipboard & saved in `device_auths.json` which is compatible out of the box with
    <a href="https://github.com/Terbau/fortnitepy">fortnitepy</a>.
-   
+
 ## Example responses:
 ### Console
 ```json

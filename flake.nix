@@ -1,6 +1,5 @@
-# https://gist.github.com/sagittaros/32dc6ffcbc423dc0fed7eef24698d5ca 
 {
-  description = "Flake to manage python workspace";
+  description = "Flake for DeviceAuthGenerator";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -11,7 +10,7 @@
   outputs = { self, nixpkgs, flake-utils, mach-nix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        python = "python39"; # <--- change here
+        python = "python39"; 
         pkgs = import nixpkgs {
           inherit system;
           config = { allowUnfree = true; };
