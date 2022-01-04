@@ -95,15 +95,19 @@ class EpicGenerator:
         os.system("cls" if "win" in sys.platform else "clear")
 
         while True:
-            print("Opening device code link in a new tab.")
+            print("Trying to open device code link in a new tab.")
 
             device_code = await self.create_device_code()
-            webbrowser.open(
-                f"https://www.epicgames.com/activate?userCode={device_code[0]}",
+            activate_url = f"https://www.epicgames.com/activate?userCode={device_code[0]}"
+            browser_opened = webbrowser.open(
+                activate_url,
                 new=1,
             )
+            if not browser_opened:
+                print("Failed to open a browser.")
+                print(f"Please open this url in a browser: {activate_url}")
 
-            user = await self.wait_for_device_code_completion(code=device_code[1])
+            user = await self.wait_for_device_code_completion(code=device_code[1], clear=browser_opened)
             device_auths = await self.create_device_auths(user)
 
             os.system("cls" if "win" in sys.platform else "clear")
@@ -111,7 +115,11 @@ class EpicGenerator:
             print(f"Generated device auths for: {user.display_name}.")
             print(pretty_device_auths)
 
-            pyperclip.copy(pretty_device_auths)
+            try:
+                pyperclip.copy(pretty_device_auths)
+            except pyperclip.PyperclipException:
+                print("Failed to copy auth data to clipboard.")
+
             await self.save_device_auths(device_auths=device_auths, user=user)
 
             print("\n")
@@ -159,8 +167,9 @@ class EpicGenerator:
 
         return data["user_code"], data["device_code"]
 
-    async def wait_for_device_code_completion(self, code: str) -> EpicUser:
-        os.system("cls" if "win" in sys.platform else "clear")
+    async def wait_for_device_code_completion(self, code: str, clear: bool) -> EpicUser:
+        if clear:
+            os.system("cls" if "win" in sys.platform else "clear")
         print("Waiting for completion.")
 
         while True:
