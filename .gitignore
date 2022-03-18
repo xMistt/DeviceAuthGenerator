@@ -142,7 +142,6 @@ cython_debug/
 media
 static
 
-
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
@@ -182,7 +181,6 @@ $RECYCLE.BIN/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-
 # General
 .DS_Store
 .AppleDouble
@@ -209,3 +207,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# IDE
+.vscode
+
+# Credentials
+**device_auths.json**
