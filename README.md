@@ -73,7 +73,7 @@ ___
 ```
 ## Want to compile it yourself?
 If you are uneasy about running a random executable, you can compile DeviceAuthGenerator yourself by installing the requirements and pyinstaller, then you can compiile it by the command: 
-`pyinstaller --onefile -i icon.ico -n DeviceAuthGenerator generator.py`
+```pyinstaller --onefile -i icon.ico -n DeviceAuthGenerator generator.py```
 The executable will be found in `/dist`.
 
 
