@@ -71,5 +71,11 @@ ___
     }
 }
 ```
+## Want to compile it yourself?
+If you are uneasy about running a random executable, you can compile DeviceAuthGenerator yourself by installing the requirements and pyinstaller, then you can compiile it by the command: 
+`pyinstaller --onefile -i icon.ico -n DeviceAuthGenerator generator.py`
+The executable will be found in `/dist`.
+
+
 ## License:
 By downloading this, you agree to the Commons Clause license and that you're not allowed to sell this repository or any code from this repository. For more info see https://commonsclause.com/.
