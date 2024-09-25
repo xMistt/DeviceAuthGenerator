@@ -41,7 +41,7 @@ __version__ = "1.1.1"
 
 # "Constants" ? I don't know.
 SWITCH_TOKEN = "OThmN2U0MmMyZTNhNGY4NmE3NGViNDNmYmI0MWVkMzk6MGEyNDQ5YTItMDAxYS00NTFlLWFmZWMtM2U4MTI5MDFjNGQ3"
-IOS_TOKEN = "MzQ0NmNkNzI2OTRjNGE0NDg1ZDgxYjc3YWRiYjIxNDE6OTIwOWQ0YTVlMjVhNDU3ZmI5YjA3NDg5ZDMxM2I0MWE="
+ANDROID_TOKEN = "M2Y2OWU1NmM3NjQ5NDkyYzhjYzI5ZjFhZjA4YThhMTI6YjUxZWU5Y2IxMjIzNGY1MGE2OWVmYTY3ZWY1MzgxMmU="
 
 
 class EpicUser:
@@ -200,7 +200,7 @@ class EpicGenerator:
             method="POST",
             url="https://account-public-service-prod03.ol.epicgames.com/account/api/oauth/token",
             headers={
-                "Authorization": f"basic {IOS_TOKEN}",
+                "Authorization": f"basic {ANDROID_TOKEN}",
                 "Content-Type": "application/x-www-form-urlencoded",
             },
             data={
