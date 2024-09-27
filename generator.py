@@ -2,7 +2,7 @@
 
 """
 “Commons Clause” License Condition v1.0
-Copyright Oli 2019-2021
+Copyright Oli 2019-2024
 
 The Software is provided to you by the Licensor under the
 License, as defined below, subject to the following condition.
@@ -37,7 +37,7 @@ import aiohttp
 import pyperclip
 
 
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 # "Constants" ? I don't know.
 SWITCH_TOKEN = "OThmN2U0MmMyZTNhNGY4NmE3NGViNDNmYmI0MWVkMzk6MGEyNDQ5YTItMDAxYS00NTFlLWFmZWMtM2U4MTI5MDFjNGQ3"
