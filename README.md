@@ -1,8 +1,8 @@
 <h1 align="center">DeviceAuthGenerator</h1>
 
 <p align="center">
-    <a href="https://www.python.org/downloads/release/python-380/" align="center">
-        <img alt="Python" src="https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue">
+    <a href="https://www.python.org/downloads/" align="center">
+        <img alt="Python" src="[https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)">
     </a>
     <a href="https://www.python.org/dev/peps/pep-0008/" align="center">
         <img alt="PEP8" src="https://img.shields.io/badge/PEP8-compliant-brightgreen.svg">
