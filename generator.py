@@ -187,7 +187,7 @@ class EpicGenerator:
                     else:
                         print(json.dumps(token, sort_keys=False, indent=4))
 
-                await asyncio.sleep(5)
+                await asyncio.sleep(10)
 
         async with self.http.request(
             method="GET",
