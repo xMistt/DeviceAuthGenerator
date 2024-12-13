@@ -37,9 +37,8 @@ import aiohttp
 import pyperclip
 
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
-# "Constants" ? I don't know.
 SWITCH_TOKEN = "OThmN2U0MmMyZTNhNGY4NmE3NGViNDNmYmI0MWVkMzk6MGEyNDQ5YTItMDAxYS00NTFlLWFmZWMtM2U4MTI5MDFjNGQ3"
 ANDROID_TOKEN = "M2Y2OWU1NmM3NjQ5NDkyYzhjYzI5ZjFhZjA4YThhMTI6YjUxZWU5Y2IxMjIzNGY1MGE2OWVmYTY3ZWY1MzgxMmU="
 
@@ -93,13 +92,14 @@ class EpicGenerator:
         )
         await asyncio.sleep(3)
 
-        os.system('cls' if sys.platform.startswith('win') else 'clear')
-
         while True:
-            print("Opening device code link in a new tab.")
+            os.system('cls' if sys.platform.startswith('win') else 'clear')
 
             device_code = await self.create_device_code()
             webbrowser.open(device_code[0], new=1)
+
+            print(f"Opening {device_code[0]} in a new tab.\n"
+                  f"Waiting for login...")
 
             user = await self.wait_for_device_code_completion(code=device_code[1])
             device_auths = await self.create_device_auths(user)
@@ -123,7 +123,7 @@ class EpicGenerator:
                 break
             else:
                 os.system('cls' if sys.platform.startswith('win') else 'clear')
-                print('Closing DeviceAuthGenerator...')
+                print('Restarting DeviceAuthGenerator...')
 
                 await asyncio.sleep(1)
 
@@ -160,7 +160,7 @@ class EpicGenerator:
         return data["verification_uri_complete"], data["device_code"]
 
     async def wait_for_device_code_completion(self, code: str) -> EpicUser:
-        os.system('cls' if sys.platform.startswith('win') else 'clear')
+        # os.system('cls' if sys.platform.startswith('win') else 'clear')
 
         while True:
             async with self.http.request(
@@ -249,11 +249,6 @@ class EpicGenerator:
         with open("device_auths.json", "w") as fp:
             json.dump(current, fp, sort_keys=False, indent=4)
 
-    def run(self) -> None:
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.start())
-        loop.run_forever()
-
 
 gen = EpicGenerator()
-gen.run()
+asyncio.run(gen.start())
